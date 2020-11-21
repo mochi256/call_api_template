@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface InfomationPanelProps {
-  value: string,
+  message: string,
 }
 
 export const InfomationPanel:React.FC<InfomationPanelProps> = (props) => {
-  const { value } = props;
+  const { message } = props;
   return (
       <Style>
-        { value }
+        { message }
       </Style>
   );
 };
