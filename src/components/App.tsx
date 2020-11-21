@@ -11,10 +11,7 @@ export const App:React.FC<AppProps> = (props) => {
   const { id } = props;
   return (
       <>
-        <UserInfo 
-          id={ id } 
-          name={'test'} 
-        />
+        <UserInfo id={ id } />
         <Button title={'show-user-info'} />
         <InfomationPanel value={'test'} />
       </>
