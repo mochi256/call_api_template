@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { App } from './components/App'
 
 ReactDOM.render(
-  <App button_title={'show-user-info'} />,
+  <App id={'id1234'} />,
   document.getElementById('root')
 );
-

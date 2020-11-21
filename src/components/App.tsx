@@ -1,14 +1,22 @@
 import React from 'react';
+import { UserInfo } from './UserInfo';
 import { Button } from './Button';
-
+import { InfomationPanel } from './InfomationPanel';
 
 export interface AppProps {
-  button_title: string,
+  id: string,
 }
 
 export const App:React.FC<AppProps> = (props) => {
-  const { button_title } = props;
+  const { id } = props;
   return (
-      <Button title={button_title} />
+      <>
+        <UserInfo 
+          id={ id } 
+          name={'test'} 
+        />
+        <Button title={'show-user-info'} />
+        <InfomationPanel value={'test'} />
+      </>
   );
 };
