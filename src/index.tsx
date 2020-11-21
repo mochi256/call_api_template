@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { App } from './components/App'
 
 ReactDOM.render(
-  <App />,
+  <App button_title={'show-user-info'} />,
   document.getElementById('root')
 );
 
