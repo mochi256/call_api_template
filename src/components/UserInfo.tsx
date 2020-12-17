@@ -10,20 +10,20 @@ export const UserInfo:React.FC<UserInfoProps> = (props) => {
   const { id } = props;
   const [data, setData] = React.useState({
     id: 'loading...',
-    name: 'loading...'
+    name: 'loading...',
   });
   React.useEffect(() => {
     CallApi({
       method: 'GET',
-      path: '/api/v1/user/'+id
+      path: `/api/v1/user/${id}`,
     })
     .then( res => res.json())
     .then((json) => { setData(json)})
-  }, [UserInfo]);
+  }, []);
   return (
       <Style>
-        ID: { data['id'] }<br />
-        Name: { data['name'] }
+        ID: { data.id }<br />
+        Name: { data.name }
       </Style>
   );
 };

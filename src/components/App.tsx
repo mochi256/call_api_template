@@ -19,16 +19,16 @@ export const App:React.FC<AppProps> = (props) => {
   React.useEffect(() => {
       CallApi({
         method: 'GET',
-        path: '/api/v1/info/'+id
+        path: `/api/v1/info/${id}`,
       })
       .then( res => res.json())
       .then((json) => { setInfoData(json)});
-  }, [infoData, setInfoData]);
+  }, []);
   return (
       <>
         <UserInfo id={ id } />
-        <span onClick={() => setMessage(infoData['message'])} >
-          <Button title={'show-user-info'} />
+        <span onClick={() => setMessage(infoData.message)} >
+          <Button title='show-user-info' />
         </span>
         <InfomationPanel message={ message } />
       </>

@@ -9,7 +9,7 @@ export const Button:React.FC<ButtonProps> = (props) => {
   const { title } = props;
   return (
     <Style>
-      <input type={'button'} value={title} />
+      <input type='button' value={title} />
     </Style>
   );
 };
