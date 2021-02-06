@@ -21,9 +21,10 @@ export const App:React.FC<AppProps> = (props) => {
         method: 'GET',
         path: `/api/v1/info/${id}`,
       })
-      .then( res => res.json())
-      .then((json) => { setInfoData(json)});
-  }, []);
+      .then((res) => {
+          setInfoData(res.data)
+        });
+  }, [infoData]);
   return (
       <>
         <UserInfo id={ id } />

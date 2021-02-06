@@ -1,2 +1,2 @@
-# call_api_template
-using Typescript for call api
+# typescript_template
+using some modules for Typescript

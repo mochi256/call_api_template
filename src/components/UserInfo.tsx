@@ -17,8 +17,7 @@ export const UserInfo:React.FC<UserInfoProps> = (props) => {
       method: 'GET',
       path: `/api/v1/user/${id}`,
     })
-    .then( res => res.json())
-    .then((json) => { setData(json)})
+    .then(res => { setData(res.data)})
   }, []);
   return (
       <Style>

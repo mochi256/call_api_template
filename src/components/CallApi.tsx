@@ -1,25 +1,37 @@
+import axios, { 
+  AxiosResponse,
+  AxiosRequestConfig,
+} from 'axios';
+
 const API_END_POINT = 'http://localhost:5000';
 
 interface CallApiProps {
-  method: string,
+  method: 'GET'|'POST'|'DELETE'|'PUT',
   path: string,
-  body?: Object,
+  data?: Object,
 }
 
-export const CallApi = async (props: CallApiProps):Promise<Response> => {
-  const { method, path, body } = props;
+export const CallApi = async (props: CallApiProps):Promise<AxiosResponse> => {
+  const { method, path, data } = props;
   const url = `${API_END_POINT}${path}`;
   const headers = {
     // specify json for content-type violate 
     // the cors policy, use text
     'Content-Type': 'text/plain',
   };
-  const data: RequestInit = {
+  const config: AxiosRequestConfig = {
     method: method,
     headers: headers,
   };
-  if (['POST', 'PUT'].indexOf(method)){
-    data.body = JSON.stringify(body);
+  switch (method){
+    case 'POST':
+    case 'PUT':
+      config.data = data;
+      break;
+    default:
   }
-  return fetch(url, data);
+  return axios({
+    method,
+    url,
+  });
 };
