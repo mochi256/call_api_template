@@ -1,20 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface ButtonProps {
-  title: string,
+export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+  value: string,
 }
 
 export const Button:React.FC<ButtonProps> = (props) => {
-  const { title } = props;
+  const { value } = props;
   return (
-    <Style>
-      <input type='button' value={title} />
-    </Style>
+    <Style type='button' value={value} />
   );
 };
 
-const Style = styled('div')`
+const Style = styled('button')`
   margin: 5px;
   padding: 5px;
 `;

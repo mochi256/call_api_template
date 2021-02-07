@@ -1,15 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CallApi } from "./CallApi";
 
 export interface InfomationPanelProps {
-  message: string,
+  id: string,
+  fetchOn: boolean,
 }
 
 export const InfomationPanel:React.FC<InfomationPanelProps> = (props) => {
-  const { message } = props;
+  const { id, fetchOn=false } = props;
+
+  const [data, setData] = React.useState({
+    message: 'loading...'
+  });
+  React.useEffect(() => {
+    if (!fetchOn){
+      return;
+    }
+      CallApi({
+        method: 'GET',
+        path: `/api/v1/info/${id}`,
+      })
+      .then((res) => {
+          setData(res.data)
+        });
+  }, [data]);
   return (
       <Style>
-        { message }
+        { data.message }
       </Style>
   );
 };
