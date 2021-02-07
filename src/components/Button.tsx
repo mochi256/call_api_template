@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
-  value: string,
+export interface ButtonProps {
+  label: string,
+  onClick: VoidFunction;
 }
 
 export const Button:React.FC<ButtonProps> = (props) => {
-  const { value } = props;
+  const { label, onClick } = props;
   return (
-    <Style type='button' value={value} />
+    <Style type='button' onClick={onClick}>
+      {label}
+    </Style>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CallApi } from "./CallApi";
+import { CallApi } from "../utils/CallApi";
 
 export interface UserInfoProps {
   id: string,

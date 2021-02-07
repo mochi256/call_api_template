@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CallApi } from "./CallApi";
+import { CallApi } from "../utils/CallApi";
 
 export interface InfomationPanelProps {
   id: string,
@@ -8,7 +8,7 @@ export interface InfomationPanelProps {
 }
 
 export const InfomationPanel:React.FC<InfomationPanelProps> = (props) => {
-  const { id, fetchOn=false } = props;
+  const { id, fetchOn } = props;
 
   const [data, setData] = React.useState({
     message: 'loading...'
@@ -17,14 +17,14 @@ export const InfomationPanel:React.FC<InfomationPanelProps> = (props) => {
     if (!fetchOn){
       return;
     }
-      CallApi({
-        method: 'GET',
-        path: `/api/v1/info/${id}`,
-      })
-      .then((res) => {
-          setData(res.data)
-        });
-  }, [data]);
+    CallApi({
+      method: 'GET',
+      path: `/api/v1/info/${id}`,
+    })
+    .then((res) => {
+        setData(res.data)
+      });
+  }, [fetchOn]);
   return (
       <Style>
         { data.message }

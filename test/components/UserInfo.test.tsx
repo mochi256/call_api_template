@@ -1,6 +1,6 @@
 import React from 'react';
 import { AxiosResponse } from 'axios';
-import * as CallApi from "../../src/components/CallApi";
+import * as CallApi from "../../src/utils/CallApi";
 import { shallow } from 'enzyme';
 import { UserInfo } from '../../src/components/UserInfo';
 

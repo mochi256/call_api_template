@@ -39,5 +39,17 @@
     "enzyme-to-json": "^3.6.1",
     "eslint": "^7.19.0",
     "eslint-plugin-react": "^7.22.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -14,7 +14,7 @@ export const App:React.FC<AppProps> = (props) => {
       <>
         <UserInfo id={id} />
         <Button 
-          value='show-user-info'
+          label='show-user-info'
           onClick={()=>{setFetchOn(true)}}
         />
         <InfomationPanel
